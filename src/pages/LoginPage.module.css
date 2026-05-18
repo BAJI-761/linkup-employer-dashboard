@@ -1,0 +1,257 @@
+.splitPage {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  background-color: var(--bg-page);
+  font-family: var(--font-primary);
+  overflow: hidden;
+}
+
+/* ── Left Column: Cinematic Editorial Branding ── */
+.brandingCol {
+  position: relative;
+  background-color: #0b0b0b;
+  color: #f7f7f7;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 2px solid var(--border);
+  overflow: hidden;
+}
+
+.grainOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: var(--texture-newsprint);
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.brandingHeader {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.brandingCenter {
+  max-width: 480px;
+  margin: auto 0;
+}
+
+.brandTitle {
+  font-family: var(--font-display-family);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.brandDesc {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+/* Marquee Ticker */
+.marqueeWrap {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #151515;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 0.75rem 0;
+  margin: 2rem 0;
+}
+
+.marqueeContent {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #ff3e3e;
+  text-transform: uppercase;
+}
+
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.brandingFooter {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #666;
+}
+
+/* ── Right Column: Modular Authentication Form ── */
+.formCol {
+  background-color: var(--bg-page);
+  background-image: var(--texture-newsprint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.authCard {
+  width: 100%;
+  maxWidth: 440px;
+  background: var(--bg-surface);
+  border: var(--border-heavy);
+  padding: 3rem;
+  box-shadow: var(--shadow-solid);
+}
+
+.authHeader {
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  font-family: var(--font-display-family);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin: 0 0 1.5rem 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid var(--border);
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.75rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.activeTab {
+  color: var(--text-primary);
+  background: var(--primary-light);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  margin-bottom: -2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.input {
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  outline: none;
+  border-radius: 0px !important;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--accent);
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--text-primary);
+  color: var(--bg-page);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background-color: var(--text-secondary);
+}
+
+.demoTip {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.demoTip code {
+  color: var(--accent);
+}
+
+.footerNote {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .splitPage {
+    grid-template-columns: 1fr;
+  }
+  
+  .brandingCol {
+    display: none;
+  }
+  
+  .formCol {
+    padding: 2rem;
+  }
+}

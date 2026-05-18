@@ -1,0 +1,104 @@
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  cursor: grab;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+  border-radius: 0px;
+}
+
+.card:hover {
+  border-color: var(--border);
+  box-shadow: 4px 4px 0px 0px var(--border);
+}
+
+.card:active {
+  cursor: grabbing;
+  transform: scale(0.98);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  background-color: var(--primary);
+  color: var(--bg-page);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display-family);
+  font-weight: 700;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.jobTitle {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+  margin-top: 0.25rem;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.skillChip {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  border-radius: 0px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-light);
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.score {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--primary);
+  color: var(--bg-page);
+  border-radius: 0px;
+}

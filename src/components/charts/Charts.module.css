@@ -1,0 +1,49 @@
+.chartCard {
+  border: 1px solid var(--border); background: var(--bg-card);
+  transition: box-shadow var(--transition-base);
+}
+.chartCard:hover { box-shadow: var(--shadow-card-hover); }
+
+.chartHeader {
+  padding: 20px 24px 0; display: flex;
+  align-items: baseline; justify-content: space-between;
+}
+.chartTitle {
+  font-family: var(--font-mono); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.12em; color: var(--text-primary);
+}
+.chartSubtitle {
+  font-family: var(--font-mono); font-size: 10px;
+  color: var(--text-muted); letter-spacing: 0.05em; text-transform: uppercase;
+}
+.chartBody { padding: 16px 8px 8px; }
+
+/* ── Tooltip ── */
+.tooltip {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 10px 14px; background: var(--primary); color: var(--bg-page);
+  border: none; font-family: var(--font-sans);
+}
+.tooltipLabel { font-size: 11px; opacity: 0.7; }
+.tooltipValue { font-family: var(--font-mono); font-size: 14px; font-weight: 700; }
+
+/* ── Legend ── */
+.legendWrap {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center; padding: 8px 0 0;
+}
+.legendItem { display: flex; align-items: center; gap: 6px; }
+.legendDot { width: 10px; height: 10px; flex-shrink: 0; }
+.legendLabel {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary);
+}
+.legendCount {
+  font-family: var(--font-mono); font-size: 11px;
+  font-weight: 700; color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .chartHeader { padding: 16px 16px 0; }
+  .chartBody { padding: 8px 0 4px; }
+}

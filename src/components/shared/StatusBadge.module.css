@@ -1,0 +1,14 @@
+.badge {
+  display: inline-flex; align-items: center;
+  padding: 4px 10px; border-radius: 0px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  border: 1px solid; white-space: nowrap;
+}
+
+.active { color: var(--stat-green); border-color: var(--stat-green); background: var(--stat-green-bg); }
+.closed { color: var(--text-muted); border-color: var(--border-light); background: transparent; }
+.pending { color: #B45309; border-color: var(--status-pending); background: var(--status-pending-bg); }
+.reviewed { color: #2563EB; border-color: var(--status-reviewed); background: var(--status-reviewed-bg); }
+.shortlisted { color: #16A34A; border-color: var(--status-shortlisted); background: var(--status-shortlisted-bg); }
+.rejected { color: #DC2626; border-color: var(--status-rejected); background: var(--status-rejected-bg); }

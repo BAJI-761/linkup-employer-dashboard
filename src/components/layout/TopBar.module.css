@@ -1,0 +1,133 @@
+.topbar {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 32px; background: var(--bg-page);
+  border-bottom: 2px solid var(--border);
+}
+
+/* ── Menu (Mobile) ── */
+.menuBtn {
+  display: none; width: 36px; height: 36px;
+  align-items: center; justify-content: center;
+  border: 1px solid var(--border); color: var(--text-primary);
+  cursor: pointer; background: var(--bg-page);
+}
+
+/* ── Search ── */
+.searchWrap {
+  position: relative; flex: 1; max-width: 420px;
+}
+.searchIcon {
+  position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+  color: var(--text-muted); pointer-events: none;
+}
+.searchInput {
+  width: 100%; padding: 10px 14px 10px 40px;
+  border: 1px solid var(--border-light); background: var(--bg-card);
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--text-primary); transition: border-color var(--transition-base);
+  border-radius: 0px;
+}
+.searchInput:focus { border-color: var(--border); }
+.searchInput::placeholder { color: var(--text-muted); font-family: var(--font-mono); }
+
+/* ── Actions ── */
+.actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.iconBtn {
+  position: relative; width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border-light); color: var(--text-secondary);
+  cursor: pointer; transition: all var(--transition-fast);
+  background: var(--bg-page);
+}
+.iconBtn:hover { border-color: var(--border); color: var(--text-primary); }
+.badge {
+  position: absolute; top: -4px; right: -4px;
+  width: 18px; height: 18px; background: var(--accent); color: #fff;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* ── Profile Button ── */
+.profileBtn {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 12px; border: 1px solid var(--border-light);
+  cursor: pointer; transition: border-color var(--transition-fast);
+  color: var(--text-primary); background: var(--bg-page);
+}
+.profileBtn:hover { border-color: var(--border); }
+.avatar {
+  width: 28px; height: 28px; background: var(--primary);
+  color: var(--bg-page); display: flex; align-items: center;
+  justify-content: center; font-family: var(--font-sans);
+  font-weight: 800; font-size: 13px;
+}
+.profileName {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 600;
+}
+
+/* ── Dropdowns ── */
+.dropdownWrap { position: relative; }
+.dropdown {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  min-width: 300px; background: var(--bg-page);
+  border: 2px solid var(--border); z-index: var(--z-dropdown);
+  box-shadow: 6px 6px 0px 0px var(--border);
+}
+.dropdownHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 16px; border-bottom: 1px solid var(--border-light);
+}
+.dropdownHeader span {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.dropdownHeader button {
+  font-family: var(--font-mono); font-size: 10px; color: var(--accent);
+  cursor: pointer; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.notifItem {
+  padding: 12px 16px; border-bottom: 1px solid var(--border-light);
+  cursor: pointer; transition: background var(--transition-fast);
+}
+.notifItem:hover { background: var(--bg-card-hover); }
+.notifItem.unread { border-left: 3px solid var(--accent); }
+.notifMessage { font-size: 13px; line-height: 1.4; margin-bottom: 4px; color: var(--text-primary); }
+.notifTime { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+
+.profileCard {
+  display: flex; align-items: center; gap: 12px; padding: 16px;
+}
+.avatarLg {
+  width: 40px; height: 40px; background: var(--primary); color: var(--bg-page);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-sans); font-weight: 800; font-size: 18px;
+}
+.profileNameLg { font-family: var(--font-sans); font-size: 14px; font-weight: 700; }
+.profileEmail { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+.dropdownDivider { height: 1px; background: var(--border-light); }
+.dropdownItem {
+  width: 100%; padding: 12px 16px; text-align: left;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; color: var(--text-secondary);
+  cursor: pointer; transition: all var(--transition-fast);
+}
+.dropdownItem:hover { background: var(--bg-card-hover); color: var(--accent); }
+
+/* ── Mobile ── */
+@media (max-width: 1024px) {
+  .topbar { padding: 12px 16px; }
+  .menuBtn { display: flex; }
+  .profileName { display: none; }
+  .searchWrap { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .topbar { gap: 8px; padding: 10px; }
+  .searchWrap { display: none; } /* Hide search to save space for actions */
+  .dropdown { min-width: 260px; right: 0; }
+  .actions { gap: 4px; }
+  .iconBtn { width: 32px; height: 32px; }
+  .profileBtn { padding: 4px; border: none; }
+}
